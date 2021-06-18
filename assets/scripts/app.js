@@ -47,16 +47,16 @@ function addMovieBtns(){
  const title = document.getElementById('title').value;
  const rating = document.getElementById('rating').value;
  const url = document.getElementById('image-url').value;
- movielist={};
+ mymovies={};
   if(title==="" || +rating <= 1 || url==="" ){ 
       window.alert('Please Enter Valid Values !!!')
       return
   }
   else{
-     movielist.title=title;
-     movielist.rating=rating;
-     movielist.url=url;
-     movies.push(movielist);
+     mymovies.title=title;
+     mymovies.rating=rating;
+     mymovies.url=url;
+     movielist.push(movielist);
      clearInputs();
      closeModal();
     
