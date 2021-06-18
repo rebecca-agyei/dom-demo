@@ -48,7 +48,7 @@ function addMovieBtns(){
  const rating = document.getElementById('rating').value;
  const url = document.getElementById('image-url').value;
  mymovies={};
-  if(title==="" || +rating <= 1 || url==="" ){ 
+  if(title==="" || +rating < 1 || +rating > 5 || url===""  ){ 
       window.alert('Please Enter Valid Values !!!')
       return
   }
