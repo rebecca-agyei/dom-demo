@@ -1,16 +1,17 @@
-const addMovie = document.getElementsByTagName('header')[0].lastElementChild;
-const modal = document.querySelector('.modal');
+
+const addMovieModal = document.querySelector('.modal');
+const addMovieBtn = document.getElementsByTagName('header')[0].lastElementChild;
 const backdrop = document.getElementById('backdrop');
 const add = document.querySelector('.btn--success')
-movies=[];
+movielist = [];
 
-addMovie.addEventListener('click',(e)=>{ 
-    modal.style.display='block';
-    toggleBackDrop();
+addMovieBtn.addEventListener('click',(e)=>{ 
+    addMovieModal.style.display='block';
+    backDropToogle();a
 })
 
-toggleBackDrop()=>{
-    if( modal.style.display==='block'){
+function backDropToogle(){
+    if( addMovieModal.style.display==='block'){
         backdrop.style.display='block';
         backdrop.style.pointerEvents='auto';
     }
@@ -20,13 +21,13 @@ toggleBackDrop()=>{
 }
 
 function closeModal(){
-    modal.style.display='none';
-   backdrop.style.display='none';
+    addMovieModal.style.display='none';
+    backdrop.style.display='none';
 }
 
 function closeBackdrop(){
     backdrop.style.display='none';
-    modal.style.display='none';
+    addMovieModal.style.display='none';
     backdrop.style.pointerEvents='none';
   
 }
@@ -40,22 +41,22 @@ backdrop.addEventListener('click',()=>{
    
 })
 
-add.addEventListener('click',()=>{addMovies()})
+add.addEventListener('click',()=>{addMovieBtns()})
 
-function addMovies(){
+function addMovieBtns(){
  const title = document.getElementById('title').value;
  const rating = document.getElementById('rating').value;
  const url = document.getElementById('image-url').value;
- movie={};
+ movielist={};
   if(title==="" || +rating <= 1 || url==="" ){ 
       window.alert('Please Enter Valid Values !!!')
       return
   }
   else{
-     movie.title=title;
-     movie.rating=rating;
-     movie.url=url;
-     movies.push(movie);
+     movielist.title=title;
+     movielist.rating=rating;
+     movielist.url=url;
+     movies.push(movielist);
      clearInputs();
      closeModal();
     
